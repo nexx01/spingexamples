@@ -5,7 +5,7 @@ controller:
 server:
   port: 8080
 #-Djavax.net.debug=all
-trust-store: classpath:keystore/baeldung3.p12
+trust-store: classpath:keystore/baeldung2.p12
 trust-store-password: password
 #    key-alias: baeldung
 #    enabled: true

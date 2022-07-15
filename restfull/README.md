@@ -1,0 +1,1 @@
+https://struchkov.dev/blog/spring-boot-validation/

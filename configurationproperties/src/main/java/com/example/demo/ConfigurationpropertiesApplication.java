@@ -49,6 +49,8 @@ public class ConfigurationpropertiesApplication implements CommandLineRunner {
 				.getForEntity("https://localhost:8086/test", String.class, Collections.emptyMap());
 
 		System.out.println(restTemplate);
+
+		testAnnotationClass.forParametrTest("f").subscribe();
 	}
 }
 

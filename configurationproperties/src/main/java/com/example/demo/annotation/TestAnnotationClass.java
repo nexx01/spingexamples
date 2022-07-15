@@ -1,11 +1,14 @@
 package com.example.demo.annotation;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static com.example.demo.annotation.AnnotationInAnnotation.*;
 
 @Component
 public class TestAnnotationClass {
@@ -17,6 +20,19 @@ public class TestAnnotationClass {
 
     @AnnotationWithOneParametr
     public List<Integer> test() throws InterruptedException{
+        System.out.println("--> AnnotationWithOneParametr");
+        List<Integer> ret = new ArrayList<>(Arrays.asList(100, 2, 10));
+        return ret;
+    }
+
+   // @AnnotationInAnnotation({
+     //       @InAnnotation(name = "sd")
+   // }   )
+    @AnnotationInAnnotation(
+            value2 = @InAnnotation(name = "faaaa"),
+          value1 =  @InAnnotation(name = "faaaa")
+    )
+    public List<Integer> inAnnotation() throws InterruptedException{
         System.out.println("--> AnnotationWithOneParametr");
         List<Integer> ret = new ArrayList<>(Arrays.asList(100, 2, 10));
         return ret;
@@ -45,4 +61,12 @@ public class TestAnnotationClass {
         return Mono.just(ret)
                 .doOnSuccess(r-> System.out.println("before mono "+ r));
     }
+
+    public Mono<List<Integer>> forParametrTest(@ForParametr(value = "d") String s) throws InterruptedException{
+        System.out.println("--> before forParametrTest");
+        List<Integer> ret = new ArrayList<>(Arrays.asList(100, 2, 10));
+        return Mono.just(ret)
+                .doOnSuccess(r-> System.out.println("forParametrTest mono "+ r));
+    }
+
 }
