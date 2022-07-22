@@ -13,11 +13,28 @@ repositories {
 }
 
 dependencies {
+	// https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
+	implementation 'org.springframework.data:spring-data-jpa:2.6.6'
+
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+// https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-authorization-server
+	implementation 'org.springframework.security:spring-security-oauth2-authorization-server:0.3.1'
+// https://mvnrepository.com/artifact/org.projectlombok/lombok
+	compileOnly 'org.projectlombok:lombok:1.18.24'
+// https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
+	implementation 'org.springframework.data:spring-data-jpa:2.7.0'
+// https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core
+	implementation 'org.hibernate.orm:hibernate-core:6.1.0.Final'
+
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+// https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
+	// https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons
+	implementation 'org.springframework.data:spring-data-commons:2.7.0'
+
 }
 
 tasks.named('test') {
