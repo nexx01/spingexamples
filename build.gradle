@@ -25,6 +25,9 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// https://mvnrepository.com/artifact/com.google.auto.service/auto-service
+	implementation 'com.google.auto.service:auto-service:1.0.1'
+
 }
 
 tasks.named('test') {

@@ -1,0 +1,8 @@
+mq:
+  user: ${MQ_USER:myuser}
+  pass: ${MQ_PASSWORD:otherpassword}
+  server:
+    host: ${MQ_HOST:localhost}
+    port: ${MQ_PORT:61616}
+    stomp-port: 61613
+  url: tcp://${mq.server.host}:${mq.server.port}

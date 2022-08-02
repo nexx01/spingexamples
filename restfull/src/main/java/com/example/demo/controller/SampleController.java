@@ -2,13 +2,18 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Order;
 import com.example.demo.entity.Product;
+import org.apache.http.client.methods.HttpRequestBase;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ServerWebExchange;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
@@ -37,7 +42,9 @@ public class SampleController {
     }
 
     @PutMapping(value = "/order", produces = "application/json")
-    public Order putOrder(@RequestBody Order order) {
+//    public Order putOrder(@RequestBody Order order) {
+//    public Order putOrder(@RequestBody Order  o,  Map<String,List<String>> d) {
+    public Order putOrder(HttpEntity<String> httpEntity) {
 
         HashMap<Integer, Product> objectObjectHashMap = new HashMap<>();
         objectObjectHashMap.put(1, new Product(1, 1, 2));

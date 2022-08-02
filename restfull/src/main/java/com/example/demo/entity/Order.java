@@ -5,12 +5,20 @@ import java.util.HashMap;
 //@JacksonXmlProperty(localName = "City")
 
 public class Order {
-    private String price;
+    private String name;
+    private String name2;
     private Integer id;
 //    private HashMap<Integer, Product> productHashMap;
 
+
+    public Order(String name, String name2, Integer id) {
+        this.name = name;
+        this.name2 = name2;
+        this.id = id;
+    }
+
     public Order(String price, Integer id, HashMap<Integer, Product> productHashMap) {
-        this.price = price;
+        this.name = price;
         this.id = id;
 //        this.productHashMap = productHashMap;
     }
@@ -18,8 +26,8 @@ public class Order {
     public Order() {
     }
 
-    public String getPrice() {
-        return price;
+    public String getName() {
+        return name;
     }
 
     public Integer getId() {

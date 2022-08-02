@@ -1,0 +1,4 @@
+
+<Logger name="org.testcontainers" level="DEBUG" additivity="false">
+    <AppenderRef ref="ConsoleAppender"/>
+</Logger>

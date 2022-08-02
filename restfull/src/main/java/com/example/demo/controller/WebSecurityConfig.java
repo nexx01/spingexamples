@@ -39,17 +39,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter  {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         PasswordEncoder encoder =
                 PasswordEncoderFactories.createDelegatingPasswordEncoder();
-        auth
-                .inMemoryAuthentication()
+        auth.inMemoryAuthentication()
                 .withUser("user")
                 .password(encoder.encode("password"))
                 .roles("USER")
-
                 .and()
                 .withUser("admin")
                 .password(encoder.encode("admin"))
-                .roles("USER", "ADMIN");
-        ;
+                .roles("USER", "ADMIN");;
     }
 
 }

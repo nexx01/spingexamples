@@ -1,0 +1,9 @@
+spring:
+  activemq:
+    user: ${mq.user}
+    password: ${mq.pass}
+    in-memory: false
+    broker-url: ${mq.url}
+  jms:
+    template:
+      default-destination: tacocloud.order.queue
