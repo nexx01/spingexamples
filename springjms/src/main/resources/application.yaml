@@ -1,0 +1,30 @@
+spring:
+  application:
+    profiles:
+      include: > 
+        props,
+        mq-config
+  activemq:
+    packages:
+      trust-all: true
+#      trusted:
+#        - <package1>
+#        - <package2>
+  jms:
+    template:
+#      default-destination: tacocloud.order.queue
+      default-destination: 11111
+
+
+logging:
+  level:
+    org.springframework: TRACE
+
+mq:
+  user: ${MQ_USER:myuser}
+  password: ${MQ_PASSWORD:otherpassword}
+  server:
+    host: ${MQ_HOST:localhost}
+    port: ${MQ_PORT:61616}
+    stomp-port: 61613
+  url: tcp://${mq.server.host}:${mq.server.port}
