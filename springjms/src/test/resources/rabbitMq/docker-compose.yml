@@ -10,8 +10,9 @@ services:
 #      RABBITMQ_DEFAULT_USER: user
 #      RABBITMQ_DEFAULT_PASS: password
     volumes:
-      - ./init/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
-      - ./init/definitions.json:/etc/rabbitmq/definitions.json:ro
+      - ./conf/rabbitmq.conf:etc/rabbitmq/:ro
+      - ./conf/definitions.json:etc/rabbitmq/:ro
+#      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
 #      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
 #      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
 

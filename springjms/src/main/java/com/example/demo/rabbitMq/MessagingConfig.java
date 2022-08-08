@@ -2,8 +2,10 @@ package com.example.demo.rabbitMq;
 
 import lombok.val;
 import org.springframework.amqp.core.*;
+import org.springframework.amqp.rabbit.listener.RabbitListenerEndpointRegistrar;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
+import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
 
 @ConditionalOnProperty(name = "rabbit.enabled",havingValue = "true")
 public class MessagingConfig {
@@ -33,4 +35,15 @@ public class MessagingConfig {
                 .bind(fanoutQueue)
                 .to(fanoutExchange));
     }
+
+    @Bean
+    public MappingJackson2MessageConverter jackson2Converter() {
+        MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
+        return converter;
+    }
+//
+//    @Override
+//    public void configureRabbitListeners(RabbitListenerEndpointRegistrar registrar) {
+//        registrar.setMessageHandlerMethodFactory(myHandlerMethodFactory());
+//    }
 }

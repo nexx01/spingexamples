@@ -1,0 +1,48 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.2'
+	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-integration
+	implementation 'org.springframework.boot:spring-boot-starter-integration:2.7.2'
+	// https://mvnrepository.com/artifact/org.springframework.integration/spring-integration-mail
+	implementation 'org.springframework.integration:spring-integration-mail:5.5.14'
+
+	// https://mvnrepository.com/artifact/org.springframework.integration/spring-integration-file
+	implementation 'org.springframework.integration:spring-integration-file:5.5.14'
+	// https://mvnrepository.com/artifact/javax.mail/mail
+// https://mvnrepository.com/artifact/javax.mail/mail
+	implementation 'javax.mail:mail:1.5.0-b01'
+// https://mvnrepository.com/artifact/org.apache.commons/commons-text
+	implementation 'org.apache.commons:commons-text:1.9'
+
+
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

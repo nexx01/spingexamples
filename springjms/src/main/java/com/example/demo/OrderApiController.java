@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.rabbitMq.RabbitOrderMessagingService;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = "/api/orders",
         produces = "application/json")
 @CrossOrigin(origins = "http://localhost:8080")
+@ConditionalOnProperty(name = "rabbit.enabled",havingValue = "true")
+
 public class OrderApiController {
     private OrderMessagingService messageService;
 
@@ -57,9 +60,18 @@ public class OrderApiController {
 
     @RequestMapping(consumes = "application/json", path = "sendToRabbit",method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.CREATED)
-    public String sendToRabbit( SomeOrser someOrser) {
+    public String sendToRabbit(@RequestBody  SomeOrser someOrser) {
 
         rabbitOrderMessagingService.sendOrderInRabbit(someOrser);
         return "success Send to rabbitMq";
     }
+
+    @RequestMapping(consumes = "application/json", path = "receiveAndConvertRabbit",method = RequestMethod.PUT)
+    @ResponseStatus(HttpStatus.CREATED)
+    public SomeOrser receiveAndConvertRabbit(SomeOrser someOrser) {
+
+       return rabbitOrderMessagingService.receiveAndConvertRabbit(someOrser);
+    }
+
+
 }
