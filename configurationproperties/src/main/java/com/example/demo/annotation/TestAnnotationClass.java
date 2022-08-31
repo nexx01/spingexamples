@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.example.demo.annotation.AnnotationInAnnotation.*;
+//import static com.example.demo.annotation.AnnotationInAnnotation.*;
 
 @Component
 public class TestAnnotationClass {
@@ -27,16 +27,16 @@ public class TestAnnotationClass {
 
    // @AnnotationInAnnotation({
      //       @InAnnotation(name = "sd")
-   // }   )
-    @AnnotationInAnnotation(
-            value2 = @InAnnotation(name = "faaaa"),
-          value1 =  @InAnnotation(name = "faaaa")
-    )
-    public List<Integer> inAnnotation() throws InterruptedException{
-        System.out.println("--> AnnotationWithOneParametr");
-        List<Integer> ret = new ArrayList<>(Arrays.asList(100, 2, 10));
-        return ret;
-    }
+//   // }   )
+//    @AnnotationInAnnotation(
+//            value2 = @InAnnotation(name = "faaaa"),
+//          value1 =  @InAnnotation(name = "faaaa")
+//    )
+//    public List<Integer> inAnnotation() throws InterruptedException{
+//        System.out.println("--> AnnotationWithOneParametr");
+//        List<Integer> ret = new ArrayList<>(Arrays.asList(100, 2, 10));
+//        return ret;
+//    }
 
     @WithListInParametr(reviews = {"1","2","3"})
     public List<Integer> withListInParametr() throws InterruptedException{

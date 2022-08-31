@@ -3,11 +3,11 @@ package com.example.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//@SpringBootApplication
-public class InteractionwithsslApplication {
+@SpringBootApplication
+public class SpringReactiveMongoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InteractionwithsslApplication.class, args);
+		SpringApplication.run(SpringReactiveMongoApplication.class, args);
 	}
 
 }

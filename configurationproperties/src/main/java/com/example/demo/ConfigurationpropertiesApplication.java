@@ -39,35 +39,35 @@ public class ConfigurationpropertiesApplication implements CommandLineRunner {
 //		System.out.println("After apply sort annotation" + testAnnotationClass.test().toString());
 //		testAnnotationClass.withListInParametr();
 
-		testAnnotationClass.withListInParametrMono("l").subscribe();
+//		testAnnotationClass.withListInParametrMono("l").subscribe();
 
 		//testAnnotationClass.beforeWithListInParametrMono("l").subscribe();
 		//
 
 
-		ResponseEntity<String> forEntity = restTemplate
-				.getForEntity("https://localhost:8086/test", String.class, Collections.emptyMap());
+//		ResponseEntity<String> forEntity = restTemplate
+//				.getForEntity("https://localhost:8086/test", String.class, Collections.emptyMap());
 
-		System.out.println(restTemplate);
+//		System.out.println(restTemplate);
 
-		testAnnotationClass.forParametrTest("f").subscribe();
+//		testAnnotationClass.forParametrTest("f").subscribe();
 	}
 }
 
-@org.springframework.stereotype.Controller
-@RequestMapping
-@ConfigurationProperties(prefix = "controller.properies", ignoreInvalidFields = false, ignoreUnknownFields = false)
-@Setter
-@NoArgsConstructor
-class Controller {
-	private String first;
-	private int second;
-	private long third;
-	private boolean fourth;
-
-	@PostConstruct
-	public void dffd(){
-		System.out.println("-------------------");
-		System.out.println("It is parametr first with inject value: "+ first);
-	}
-}
+//@org.springframework.stereotype.Controller
+//@RequestMapping
+//@ConfigurationProperties(prefix = "controller.properies", ignoreInvalidFields = false, ignoreUnknownFields = false)
+//@Setter
+//@NoArgsConstructor
+//class Controller {
+//	private String first;
+//	private int second;
+//	private long third;
+//	private boolean fourth;
+//
+//	@PostConstruct
+//	public void dffd(){
+//		System.out.println("-------------------");
+//		System.out.println("It is parametr first with inject value: "+ first);
+//	}
+//}
