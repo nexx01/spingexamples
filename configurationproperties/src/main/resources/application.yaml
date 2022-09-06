@@ -12,3 +12,13 @@ trust-store-password: password
 #  trust.store='C:\Users\V\baeldung.p12'
 #  #trust store password
 #  trust.store.password=passw0rd
+
+management:
+  endpoints:
+    enabled-by-default: true
+    info:
+      enabled: true
+    web:
+      exposure:
+        include: health,info,beans,conditions
+      base-path: /management
